@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vomume Calculator</title>
+	<script type="text/javascript">
+		/*
+			Create a function calculateVolume() that returns the value of a number multiply by itself three times. Loop to times
+			Note: use addEventListener method
+		*/
+		function calculateVolume() {
+			var side = parseInt(prompt("Enter the cube side"));
+			document.getElementById('cube').innerHTML = "Volume of " + side + " is " + getCube(side);
+			document.getElementById('cube').setAttribute("style", "height:" + side*50 + "px; width: " + side*50 + "px; border: 2px solid red; text-align: center;");
+		}
+
+		function getCube(num) {
+			return num**3;
+		}
+
+		window.addEventListener("load", calculateVolume, false);
+	</script>
+</head>
+<body>
+	<h2 id="cube"></h2>
+</body>
+</html>

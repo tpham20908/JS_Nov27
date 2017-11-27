@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Menu with Javascript</title>
+    <style type="text/css">
+        .outClass {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            color: #fff;
+            background: #00f;
+        }
+
+        .overClass {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            color: #00f;
+            background: #fff;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function rollOn() {
+            if (window.event.srcElement.className == "outClass") {
+                window.event.srcElement.className == "overClass";
+            }
+        }
+
+        function rollOff() {
+            if (window.event.srcElement.className == "overClass") {
+                window.event.srcElement.className == "outClass";
+            }
+        }
+
+        //object_name.event_name = event_handler
+        document.onmouseover = rollOn;
+        document.onmouseout = rollOff;
+    </script>
+</head>
+<body>
+    <p>
+        <span class="outClass">Home</span>
+        <span class="outClass">Products</span>
+        <span class="outClass">Services</span>
+        <span class="outClass">Downloads</span>
+        <span class="outClass">About</span>
+        <span class="outClass">Contact</span>
+    </p>
+
+</body>
+</html>

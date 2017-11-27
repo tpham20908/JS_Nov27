@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Roll Dice</title>
+	<script type="text/javascript">
+		/*
+			Roodice.html
+			Random dice image generation using the Math.random() method. Build a random mage generator that displays 4 randomly selected die images ever time the user clickds the Roll Dice button
+		*/
+		/*
+			The style of programming is known as event-driven programming - the user interacts with an element in the web page, the script is notified of the event and the script processes the event.
+			The user interaction with the GUI drives the program. The button click is know as the event. The function that is called when an event occurs is known as the event handler.
+			When a GUI event occurs n a form, the browser calls the specifies event-handling function. Before any event can be processed, each element must know which event-handling function will be called when a particular event occurs.
+		*/
+		// Declare variables to interact the img elements
+		var die1Image, die2Image, die3Image, die4Image;
+
+		// Register button to interact with the img elements
+		function start() {
+			var button = document.getElementById('rollButton');
+			button.addEventListener("click", rollDice, false);
+			// var die1Image = document.getElementById("die1");
+			// var die2Image = document.getElementById("die2");
+			// var die3Image = document.getElementById("die3");
+			// var die4Image = document.getElementById("die4");
+		}
+
+		// rollDice function takes no argument
+		function rollDice() {
+			var die1Image = document.getElementById("die1");
+			var die2Image = document.getElementById("die2");
+			var die3Image = document.getElementById("die3");
+			var die4Image = document.getElementById("die4");
+			setImage(die1Image);
+			setImage(die2Image);
+			setImage(die3Image);
+			setImage(die4Image);
+		}
+
+		// setImage function receivves 1 arg (dieImage) that represents a specific img element
+		function setImage(dieImg) {
+            var dieValue = Math.ceil((Math.random() * 6));
+			dieImg.setAttribute("src", "images/die" + dieValue + ".png");
+			dieImg.setAttribute("alt", "Die image with " + dieValue);
+		}
+		/*
+			Specify the function to call when the browser finishes loading a document
+		*/
+		window.addEventListener("load", start, false);
+	</script>
+	<style type="text/css">
+		li {
+			display: inline;
+			margin-right: 10px;
+			list-style-type: none;
+		}
+	</style>
+</head>
+<body>
+	<form id="rolldice_form" action="#">
+		<input type="button" id="rollButton" value="Roll Dice" />
+	</form>
+
+	<ol>
+		<li>
+			<img id="die1" src="images/blank.png" alt="Blank image" title="Blank image" />
+		</li>
+		<li>
+			<img id="die2" src="images/blank.png" alt="Blank image" title="Blank image" />
+		</li>
+		<li>
+			<img id="die3" src="images/blank.png" alt="Blank image" title="Blank image" />
+		</li>
+		<li>
+			<img id="die4" src="images/blank.png" alt="Blank image" title="Blank image" />
+		</li>
+	</ol>
+</body>
+</html>
