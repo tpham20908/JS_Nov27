@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Barber Shop 2017</title>
+    <script type="text/javascript">
+    	var current_sign = "barbershop_off";
+    	function changeSign() {
+    		if (current_sign == "barbershop_off") {
+    			// change the image source to barbershop_on
+    			document.getElementById("sign").src = "images/barbershop_on.jpg";
+    			current_sign = "barbershop_on";
+    		}
+    		else {
+    			// change back the image source property to barbershop_off
+    			document.getElementById("sign").src = "images/barbershop_off.jpg";
+    			current_sign = "barbershop_off";
+    		}
+    	}
+    </script>
+</head>
+<body onload="setInterval('changeSign()', 1000);">
+    <figure>
+        <img id="sign" src="images/barbershop_off.jpg" alt=" Barbershop" title="Barbershop" width="450" height="307" />
+        <figcaption>Barbarshop 2017 is now open</figcaption>
+    </figure>
+
+</body>
+</html>
